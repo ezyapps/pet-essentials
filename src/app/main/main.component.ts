@@ -19,6 +19,7 @@ export class MainComponent implements OnInit {
     this.router.events.subscribe((event) => {
           if (event instanceof NavigationEnd) {
             this.url = event.url;
+            console.log(this.url);
           }
     });
   }

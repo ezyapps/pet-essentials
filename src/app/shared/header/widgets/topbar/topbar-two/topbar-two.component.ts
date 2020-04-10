@@ -16,9 +16,14 @@ export class TopbarTwoComponent implements OnInit {
 
   public shoppingCartItems  :   CartItem[] = [];
   
-  constructor(@Inject(DOCUMENT) private document: Document,
-    @Inject(WINDOW) private window,private fix: LandingFixService, private cartService: CartService) { 
-    this.cartService.getItems().subscribe(shoppingCartItems => this.shoppingCartItems = shoppingCartItems);
+  constructor(
+      @Inject(DOCUMENT) private document: Document,
+      @Inject(WINDOW) private window,
+      private fix: LandingFixService, 
+      private cartService: CartService) { 
+
+        this.cartService.getItems().subscribe(shoppingCartItems => this.shoppingCartItems = shoppingCartItems);
+  
   }
 
   ngOnInit() { }
